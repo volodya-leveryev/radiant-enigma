@@ -1,0 +1,3 @@
+[submodule "glowing-enigma"]
+	path = glowing-enigma
+	url = https://github.com/kafitimi/glowing-enigma
