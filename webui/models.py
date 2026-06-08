@@ -11,3 +11,15 @@ class EducationPlan(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Subject(models.Model):
+    name = models.CharField('название', max_length=64)
+    file = models.FileField('файл', upload_to='subject/')
+
+    class Meta:
+        verbose_name = 'дисциплина'
+        verbose_name_plural = 'дисциплины'
+
+    def __str__(self):
+        return self.name

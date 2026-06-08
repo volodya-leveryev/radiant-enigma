@@ -1,5 +1,20 @@
 from django.contrib import admin
+from unfold.admin import ModelAdmin
+from unfold.decorators import action
 
-from .models import EducationPlan
+from . import models
 
-admin.site.register(EducationPlan)
+
+@action(description="Печать РПД")
+def print_subject(model_admin, request, queryset):
+    print(model_admin)
+    print(request)
+    print(queryset)
+
+
+class SubjectModelAdmin(ModelAdmin):
+    actions = [print_subject]
+
+
+admin.site.register(models.EducationPlan)
+admin.site.register(models.Subject, SubjectModelAdmin)
